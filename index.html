@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Animated Links</title>
+    <!-- Link to CSS file and further that link with SASS (.scss) file -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+</head>
+<body>
+    <!-- Logo -->
+    <span class="logo">S.T.A.R.S</span>
+    <!-- Start Navigation Menu -->
+    <nav class="nav">
+        <input class="nav__trigger-input" type="checkbox" id="trigger" aria-label="open the navigation"/>
+        <label class="nav__trigger-finger" for="trigger">
+          <span></span>
+        </label>
+        <!-- Start Unordered List -->
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#hoi" class="nav__link">
+              <span class="nav__text">
+                Work
+              </span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#hoi" class="nav__link">
+              <span class="nav__text">
+                About
+              </span>
+            </a>
+            <input class="nav__submenu-trigger-input" type="checkbox" id="submenu-trigger" />
+            <label class="nav__submenu-trigger-finger" for="submenu-trigger"></label>
+            <ul class="nav__list-child">
+              <li class="nav__item">
+                <a href="#hoi" class="nav__link">
+                  <span class="nav__text">
+                    About me
+                  </span>
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="#hoi" class="nav__link">
+                  <span class="nav__text">
+                    About meerkats
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav__item">
+            <a href="#hoi" class="nav__link">
+              <span class="nav__text">
+                Blog
+              </span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#hoi" class="nav__link">
+              <span class="nav__text">
+                Contact
+              </span>
+            </a>
+          </li>
+        </ul>
+        <!-- End Unordered List -->
+    </nav>
+    <!-- End Navigation Menu -->
+
+    <!-- Start Container -->
+    <div class="container">
+        <!-- Start Animated Boxes -->
+        <div class="wrap-card">    
+            <div class="card">
+                <h1>It's about the underline</h1>
+                <span class="type" style="--n:116">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam, maiores. Doloribus veniam vitae mollitia similique.</span><br>
+                <a href="#">Apply now</a>
+            </div>
+        </div>    
+        <div class="wrap-card">    
+            <div class="card">
+                <h1>It's about the underline</h1>
+                <span class="type" style="--n:116">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam, maiores. Doloribus veniam vitae mollitia similique.</span><br>
+                <a href="#">Enroll now</a>
+            </div>
+        </div>
+        <div class="wrap-card">    
+            <div class="card">
+                <h1>It's about the underline</h1>
+                <span class="type" style="--n:116">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam, maiores. Doloribus veniam vitae mollitia similique.</span><br>
+                <a href="#">Take Test</a>
+            </div>
+        </div>
+        <!-- End Animated Boxes -->
+    </div>
+    <!-- End Container -->
+
+</body>
+</html>

@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap');
+
+$bezier: cubic-bezier(0.75, 0, 0.25, 1);
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+}
+
+// Body Display Styling
+body {
+    background: rgb(3, 37, 82);
+    font-family: 'Montserrat';
+    margin: 0;
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+// Logo styling
+.logo {
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    position: absolute;
+    transform: translateX(85%);
+    color: #F98026;
+    font-size: 86px;
+    letter-spacing: 8px;
+    cursor: pointer;
+
+    // Tablet Responsiveness
+    @media (max-width: 900px) {
+        position: absolute;
+        transform: translateX(25%);
+    }
+    
+    // Mobile Responsiveness
+    @media (max-width: 600px) {
+        position: relative;
+        transform: translateX(5%);
+
+    }
+  }
+  
+  // Creating Objects Before Element
+  .logo::before {
+    content: "S.T.A.R.S";
+    position: absolute;
+    color: transparent;
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent 2px,
+      white 2px,
+      white 4px
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    top: 0px;
+    left: 0;
+    z-index: -1;
+    transition: 1s;
+  }
+  
+  // Creating Objects After Element
+  .logo::after {
+    content: "S.T.A.R.S";
+    position: absolute;
+    color: transparent;
+    background-image: repeating-linear-gradient(
+      135deg,
+      transparent 0,
+      transparent 2px,
+      white 2px,
+      white 4px
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    top: 0px;
+    left: 0px;
+    transition: 1s;
+  }
+  
+  // Before Object Styling on Hover
+  .logo:hover:before {
+    top: 10px;
+    left: 10px;
+  }
+  
+  // After Object Styling on Hover
+  .logo:hover:after {
+    top: -10px;
+    left: -10px;
+  }
+
+// Container Styling
+.container {
+    margin: 170px 50px 100px 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+
+    // Responsiveness
+    @media (max-width: 800px) {
+          flex-direction: column;
+          overflow: scroll;
+          margin: 0;
+          padding: 150px 50px;
+
+          &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    @media (max-width: 600px) {
+        padding: 50px;
+    }
+}
+
+// Box
+.card {
+    background: #FFFFFF;
+    padding: 20px;
+}
+
+// Box Styling
+.wrap-card {
+    position: relative;
+    z-index: 1;
+
+    // Creating Pseudo Elements Before and After Box
+    &::before, &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        border: 2px solid #F98026;
+        transition: all 0.25s ease-out;
+    }
+    &::before {
+        background-color: #F98026;
+        top: -15px;
+        left: -15px;
+    }
+    &::after {
+        bottom: -15px;
+        right: -15px;
+    }
+    &:hover {
+        &::before {
+            top: 15px;
+            left: 15px;
+        }
+        &::after {
+            bottom: 15px;
+            right: 15px;
+        }
+    }
+}
+
+// Headings Styling
+h1 {
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    margin: 20px 0;
+
+    &:before {
+        position: absolute;
+        content: '';
+        border-top: 5px solid rgb(3, 37, 82);
+        border-radius: 20px;
+        width: 50px;
+    }
+}
+
+// Hover Animation on Paragraph Area, Highlighting Text
+.type:hover {
+    background:
+      linear-gradient(-90deg,#00DFFC 5px,#0000 0) 10px 0,
+      linear-gradient(#00DFFC 0 0) 0 0;
+    background-size:calc(var(--n)*1ch) 200%;
+    -webkit-background-clip:padding-box,text;
+    background-clip:padding-box,text;
+    background-repeat:no-repeat;
+    animation: 
+     b .1s infinite steps(1),   
+     t calc(var(--n)*.1s) steps(var(--n)) forwards;
+  }
+  
+  // Setting Animation Frames
+  @keyframes t{
+    from {background-size:0 200%}
+  }
+  @keyframes b{
+    50% {background-position:0 -100%,0 0}
+  }
+
+// Anchor Links Styling with Clip-Path
+a {
+    color: rgb(3, 37, 82);
+    font-size: 20px;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+    font-weight: bold;
+    padding: 10px;
+    margin-left: -10px;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+    // CSS Pseudo-elements to Show an Animation on Links
+    &:before, &:after {
+        position: absolute;
+        content: '';
+        border-bottom: 3px solid rgb(3, 37, 82);
+        border-radius: 20px;
+        bottom: 5px;
+        transition: transform .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    &:before {
+        width: 20px;
+        transform-origin: left;
+    }
+
+    &:after {
+        width: 82%;
+        left: 20px;
+        transform: translateX(110%);
+    }
+
+    // Scaling on Mouse Hover
+    &:hover:before {
+        transform: scaleX(0.3);
+    }
+
+    &:hover:after {
+        transform: translateX(0);
+    }
+}
+
+.nav {
+
+    color: white;
+    &__trigger-finger {
+      // The visible part of the trigger, this will be your "nav is closed!"-state
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      width: 15px;
+      height: 10px;
+      margin: 40px;
+      color: #F98026;
+      &::before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        bottom: -5px;
+        right: -5px;
+        background: #F98026;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 0.3s $bezier;
+      }
+      span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        transition: transform 1s $bezier;
+        background: currentColor;
+        &::before,
+        &::after {
+          // Create the hamburger lines
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          display: block; // Labels are inline elements, it needs a display property that allows it it's own set height like block;
+          height: 2px;
+          background: currentColor; // inherits color set on parent
+          transition: transform 0.4s $bezier, top 0.4s 0.4s $bezier, background 0.2s $bezier;
+        }
+        &::before {
+          top: 0;
+        }
+        &::after {
+          top: calc(100% - 2px);
+        }
+      }
+    }
+    &__trigger-input, &__submenu-trigger-input {
+      // We  want to make the input invisible without using display: none;, because that will remove functionality.
+      opacity: 0;
+      width: 0;
+      height: 0;
+      appearance: none;
+      position: fixed;
+    }
+    &__trigger-input {
+      &:focus {
+        & + label {
+          color: white;
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+      &:checked {
+        & + label {
+          // change the label if the input is checked, this will be your "nav is open! 🎉"-state
+          height: 10px;
+          color: white;        
+          span {
+            transform: rotate(45deg);
+            &::before, &::after {
+              top: calc(50% - 1px);
+              transition: transform 0.4s 0.4s $bezier, top 0.4s $bezier, background 0.2s $bezier;
+            }
+            &::after {
+              transform: rotate(90deg);
+            }          
+          }
+        }
+        & ~ ul {
+          // We use a general sibling because it's less work, + label + ul would work as well
+          z-index: 9;
+          transform: none;
+          transition: 0.5s $bezier;
+        }
+      }
+    }
+    &__list {
+      // we want to make the top navigation items not visible while the input is not :checked.
+      position: fixed;
+      overflow-y: scroll;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+      background: #F98026;
+      font-size: 4rem;
+      
+      padding: 40px;
+      transform: translate(100vw) rotate(45deg);
+      transition: 0.2s $bezier;
+    }
+    &__item {
+      list-style: none;
+      & + & {
+        margin-top: 20px;
+      }
+    }
+    &__submenu-trigger-input {
+      &:checked {
+        & + label::after {
+          transform: translateY(10px);
+        }
+        & ~ ul {
+          display: block;
+        }
+      }
+      &:focus {
+        & + label::after {
+          transform: translateY(5px);
+        }
+      }
+    }
+    &__submenu-trigger-finger {
+      &::after {
+        content: '';
+        display: inline-block;
+        border: 10px solid transparent;
+        border-top-color: white;
+        transition: 0.4s $bezier;
+      }
+    } 
+    &__link {
+      text-decoration: none;
+      color: inherit;
+    }
+    &__list-child {
+      display: none;
+      font-size: 2rem;
+      margin-top: 10px;
+      padding-left: 2rem;
+    }
+  }
+  
+  main {
+    padding: 6rem 4rem;
+    h1 {
+      font-size: 3rem;
+      font-weight: normal;
+      span {
+        color: #F98026;
+      }
+    }  
+    p {
+      line-height: 1.5;
+      margin-top: 1.5rem;
+    }
+}
