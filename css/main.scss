@@ -251,8 +251,8 @@ a {
     }
 }
 
+// Navigation Menu Styling
 .nav {
-
     color: white;
     &__trigger-finger {
       // The visible part of the trigger, this will be your "nav is closed!"-state
@@ -402,18 +402,3 @@ a {
       padding-left: 2rem;
     }
   }
-  
-  main {
-    padding: 6rem 4rem;
-    h1 {
-      font-size: 3rem;
-      font-weight: normal;
-      span {
-        color: #F98026;
-      }
-    }  
-    p {
-      line-height: 1.5;
-      margin-top: 1.5rem;
-    }
-}

@@ -446,22 +446,4 @@ a:hover:after {
   margin-top: 10px;
   padding-left: 2rem;
 }
-
-main {
-  padding: 6rem 4rem;
-}
-
-main h1 {
-  font-size: 3rem;
-  font-weight: normal;
-}
-
-main h1 span {
-  color: #F98026;
-}
-
-main p {
-  line-height: 1.5;
-  margin-top: 1.5rem;
-}
 /*# sourceMappingURL=main.css.map */
