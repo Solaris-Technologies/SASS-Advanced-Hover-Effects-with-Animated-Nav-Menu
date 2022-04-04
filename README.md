@@ -12,3 +12,5 @@ CSS only fold out mobile menu.
 
 ### ANIMATED MULTILAYER TEXT LOGO
 Most of these interesting effects or animations are designed using CSS(SCSS) Pseudo-Elements.
+
+#### View live: https://solaris-technologies.github.io/SASS-Advanced-Hover-Effects-with-Animated-Nav-Menu/
